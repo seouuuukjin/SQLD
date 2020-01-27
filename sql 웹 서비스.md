@@ -2,4 +2,4 @@
 
 
 <a>https://livesql.oracle.com/apex/f?p=590:1000</a>
-ㄹ!4472!
+ㄹ!진4472!
