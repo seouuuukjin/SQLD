@@ -1,0 +1,13 @@
+CREATE TABLE sqld ( 
+    personID int, 
+    lastname varchar(256), 
+    firstname varchar(256), 
+    age int, 
+    home_date varchar(256) 
+);
+
+insert into sqld (personID, lastname, firstname, age, home_date) values (1, 'hwang', 'kevin', 23, '2020-11-02');
+insert into sqld values (2, 'gil', 'minsung', 23, '2020-06-17');
+insert into sqld (personID, lastname, age) values (3, 'kim', 29);
+
+select * from sqld;
