@@ -1,18 +1,26 @@
 CREATE TABLE sqld ( 
-    personID int,
+    personID int NOT NULL,
     lastname varchar(256), 
     firstname varchar(256), 
     age int, 
     home_date varchar(256)
-    
+    nickname_ID varchar(256),
+    CONSTRAINT sqld_pk PRIMARY KEY (personID),
+    CONSTRAINT sqld_FK FOREIGN KEY (nickname_ID) REFERENCES name_list(nick_id) 
 );
+
+
+create table sqld_sub as select * from sqld;
+
+alter table sqld [add] 새칼럼이름 데이터형식;
+
+alter table sqld [drop column] 기존칼럼이름;
 
 insert into sqld (personID, lastname, firstname, age, home_date) values (1, 'hwang', 'kevin', 23, '2020-11-02');
 insert into sqld values (2, 'gil', 'minsung', 23, '2020-06-17');
 insert into sqld (personID, lastname, age) values (3, 'kim', 29);
 
 select * from sqld;
-
 
 update sqld set anynum = 99; 
 \\\\\\\\\\update의 착각 조심
