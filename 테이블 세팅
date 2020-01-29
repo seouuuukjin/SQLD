@@ -1,9 +1,10 @@
 CREATE TABLE sqld ( 
-    personID int, 
+    personID int,
     lastname varchar(256), 
     firstname varchar(256), 
     age int, 
-    home_date varchar(256) 
+    home_date varchar(256)
+    
 );
 
 insert into sqld (personID, lastname, firstname, age, home_date) values (1, 'hwang', 'kevin', 23, '2020-11-02');
@@ -28,8 +29,39 @@ select '이름 : ' || firstname || lastname || '씨'이름목록 from sqld;
 
 insert into sqld values (4, 'song', 'jun', 23, '2020-06-17', 99);
 commit;
-\\\\\\\\\\\\
-select * from sqld;
+\\\\\\\\\\\\참고1 ; sql server 에서는 DML 구문 성공시 자동으로 commit 되고, 구문 오류일시 자동 rollback 된다.
+참고 2 ; sql server 에서의 트랜잭션은 기본적으로 3가지이다(auto commit, 암시적 트랜잭션, 명시적 트랜잭션)
+
 
 insert into sqld values (5, 'ssg', 'bomb', 35, '', 99);
 rollback;
+
+\\\\\\\\\\\\참고1 ; sql server 에서는 auto commit이 기본 방식이므로 rollback을 실행시키려면, 명시적 트랜잭션을 수행 했어야한다.
+begin tran insert into sqld values (5, 'ssg', 'bomb', 35, '', 99);
+rollback;
+
+커밋과 롤백을 사용함으로써 얻을수 있는 효과 3가지 =>
+
+
+insert into sqld values (5, 'ssg', 'bomb', 35, '', 99);
+
+#savepoint flag_A;
+(save tran flag_A);
+(save transaction flag_A);
+
+update sqld set age = 5;
+
+#savepoint flag_B;
+(save tran flag_B);
+(save transaction flag_B);
+
+delete from sqld;
+
+여기에서 이제 flag_B 와 flag_A 로 rollback 하면 된다.(A로 되돌리고 나서 미래의 저장점 B로 미래로 되돌릴 수 는 없다.)
+
+#rollback to flag_B;
+(rollback tran flag_B);
+(rollback transaction flag_B);
+
+데이터 베이스가 정상적으로 접속을 종료하면     자동으로 트랜잭션이 커밋
+애플리케이션의 이상 종료로 DB와 접속이 단절되면     자동으로 롤백 
