@@ -11,3 +11,16 @@ insert into sqld values (2, 'gil', 'minsung', 23, '2020-06-17');
 insert into sqld (personID, lastname, age) values (3, 'kim', 29);
 
 select * from sqld;
+
+
+update sqld set anynum = 99; 
+
+select * from sqld;
+
+select distinct lastname from sqld;
+select distinct home_date from sqld;
+
+select lastname 성, firstname 이름, age 나이, home_date 전역일 from sqld;
+select lastname 성, firstname 이름, anynum - age 계산값  from sqld;
+
+select '이름 : ' || firstname || lastname || '씨'이름목록 from sqld;
