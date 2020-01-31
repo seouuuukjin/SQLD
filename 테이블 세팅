@@ -10,11 +10,15 @@ CREATE TABLE sqld (
 );
 
 
+
 create table sqld_sub as select * from sqld;
 
 alter table sqld [add] 새칼럼이름 데이터형식;
 
 alter table sqld [drop column] 기존칼럼이름;
+
+alter table sqld add constraint sqld_pk primary key (personID);
+
 
 insert into sqld (personID, lastname, firstname, age, home_date) values (1, 'hwang', 'kevin', 23, '2020-11-02');
 insert into sqld values (2, 'gil', 'minsung', 23, '2020-06-17');
