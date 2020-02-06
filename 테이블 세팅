@@ -3,7 +3,7 @@ CREATE TABLE sqld (
     lastname varchar(256), 
     firstname varchar(256), 
     age int, 
-    home_date varchar(256)
+    home_date varchar(256),
     nickname_ID varchar(256),
     CONSTRAINT sqld_pk PRIMARY KEY (personID),
     CONSTRAINT sqld_FK FOREIGN KEY (nickname_ID) REFERENCES name_list(nick_id) 
