@@ -9,3 +9,9 @@ alter table emp add constraint emp_fk foreign key (personID) references sqld(per
 //
 alter 테이블 할때, 제약조건을 추가할때, pk는 그냥 추가하면 되지만, fk같은 경우는 뒤에 references 가 붙는다.
 기억!!!!!!!
+
+
+update emp set personID = 44 where ename = '안이은';
+
+//
+업데이트는 딜리트와 마찬가지로 where문이 없으면 테이블안에 모든 행에 대하여 수정을 가한다. 반대로 말하면 몇개행만 고치고싶다면, where절을 쓰라는거지
