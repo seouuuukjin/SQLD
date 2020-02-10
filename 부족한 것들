@@ -3,3 +3,9 @@ delete from sqld where lastname = 'kim' or firstname = 'minsung';
 //
 딜리트는 행을 삭제하는데 where 절로 삭제할 행을 골라서 삭제한다.
 근데, 행을 결정할때, 여러 조건을 적용 시키고싶으면 where 절 뒤에 and/or 을 사용한다.
+
+alter table emp add constraint emp_fk foreign key (personID) references sqld(personID);
+
+//
+alter 테이블 할때, 제약조건을 추가할때, pk는 그냥 추가하면 되지만, fk같은 경우는 뒤에 references 가 붙는다.
+기억!!!!!!!
