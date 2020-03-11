@@ -1,5 +1,6 @@
 <h1>PL/SQL
-
+  오라클에서는 pl/sql 이고,
+  sql server 에서는 T-SQL이다.
 <ol> 
 1.pl/sql의 구조
   
