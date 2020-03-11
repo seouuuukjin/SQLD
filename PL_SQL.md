@@ -1,5 +1,5 @@
 <h1>PL/SQL</h1>
-  오라클에서는 pl/sql 이고,
+  오라클에서는 pl/sql 이고,<br>
   sql server 에서는 T-SQL이다.
   
 <ol> 
