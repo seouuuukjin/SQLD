@@ -13,7 +13,7 @@
    
 <h2>2.pl/sql의 실행 과정</h2>
 유저 프로세스가 pl/sql 블록을 서버프로세스에 보낸다<br>
--> 서버 프로세서는 pl/sql블록을 받아서, pl/sql 엔진으로는 프로그램 문장(procedual)을 보내고, sql문장은 SQL STATEMENT EXECUTOR로 보낸다.  
+-> 서버 프로세서는 pl/sql블록을 받아서, pl/sql 엔진으로는 프로그램 문장(procedual)을 보내고, sql문장은 SQL STATEMENT EXECUTOR로 보낸다. <br>
 <h2>3.pl/sql 블록의 종류</h2>
 
 <h2>4.작성</h2>
